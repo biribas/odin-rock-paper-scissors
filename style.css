@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+:root {
+  font-size: 20px;
+  font-family: 'Roboto Slab', sans-serif;
+  user-select: none;
+  color: white;
+  --body-color: rgb(57, 57, 89);
+  --header-color: rgb(1, 1, 36);
+  --box-color: rgb(35, 35, 56);
+  --box-color-hover: rgb(17, 17, 26);
+  --emoji-yellow: #ffdc5d;
+}
+
+.flex {
+  display: flex;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--body-color);
+  margin: 0;
+  flex-direction: column;
+}
+
+#content {
+  flex: 1;
+  flex-direction: column;
+}
+
+#header {
+  text-align: center;
+  font-size: 1.5rem;
+  background-color: var(--header-color);
+}
+
+#text {
+  font-size: 1.2rem;
+  padding-top: 1.5rem;
+  text-align: center;
+  margin: 0;
+}
+
+#game-box {
+  padding: 1.5rem;
+  justify-content: center;
+  gap: 4%;
+}
+
+#game-box > p {
+  margin-bottom: 0;
+  margin-top: 2.3rem;
+  font-size: 2rem;
+  font-weight: bold;
+  align-self: center;
+}
+
+.move-box {
+  font-size: 8rem;
+  width: 10rem;
+  height: 10rem;
+  border: 0.5rem solid black;
+  border-radius: 10%;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--box-color);
+  transition: transform 0.2s;
+}
+
+.win {
+  background-color: green;
+}
+
+.lose {
+  background-color: red;
+}
+
+.animation {
+  transform: scale(0.9);
+}
+
+.score {
+  font-size: 1.3rem;
+  padding: 0.5rem 0;
+  margin: 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+#action-box > p {
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+#buttons {
+  gap: 20px;
+  justify-content: center;
+}
+
+.button {
+  font-size: 5rem;
+  height: 1.3em;
+  width: 1.3em;
+  border: 5px solid black;
+  border-radius: 5%;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  background-color: var(--box-color);
+}
+
+.button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  background-color: var(--box-color-hover);
+}
+
+footer {
+  margin-top: 1.5rem;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: var(--header-color);
+}
+
+a {
+  position: relative;
+  color: var(--emoji-yellow);
+  text-decoration: none;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: 0.1rem;
+  left: 0;
+  border-bottom: 1px solid var(--emoji-yellow);
+  width: 0%;
+  transition: width .1s;
+  pointer-events: none;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+#modal {
+  position: absolute;
+  width: 15rem;
+  top: 50%;
+  left: 50%;
+  border: 0.5rem solid black;
+  border-radius: 5%;
+  background-color: var(--header-color);
+  font-size: 1.5rem;
+  padding: 1rem;
+  text-align: center;
+  transform: translate(-50%, -50%) scale(1);
+  transition: 200ms ease-in-out;
+  z-index: 2;
+}
+
+#modal.hidden {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+#modal button {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: 0;
+  border-radius: 5%;
+  background-color: var(--box-color);
+  color: var(--emoji-yellow);
+  transition: all 0.2s ease-in-out;
+}
+
+#modal button:hover {
+  background-color: var(--box-color-hover);
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.overlay.hidden {
+  display: none;
+}

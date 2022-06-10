@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./style.css">
+    <script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+  </head>
+
+  <body class="flex">
+    
+    <div class="flex" id="content">
+      <section id="header">
+        <h1>Rock Paper Scissors</h1>
+      </section>
+      
+      <p id="text"></p>
+      
+      <section class="flex" id="game-box">
+        <div id="player">
+          <p class="score">Player: <span></span></p>
+          <div class="flex move-box"></div>
+        </div>
+        <p>VS</p>
+        <div id="computer">
+          <p class="score">Computer: <span></span></p>
+          <div class="flex move-box"></div>
+        </div>
+      </section>
+      
+      <section id="action-box">
+        <p>Choose your move</p>
+        <div class="flex" id="buttons">
+          <div class='button' data-move="Rock">&#9994;</div>
+          <div class='button' data-move="Paper">&#9995;</div>
+          <div class='button' data-move="Scissors">&#9996;&#65039;</div>
+        </div>
+      </section>
+    </div>
+    
+    <footer>
+      A project made by <a href="https://github.com/biribas">biribas</a> for <a href="https://www.theodinproject.com/">The Odin Project</a>
+    </footer>
+    
+    <section class="hidden" id="modal">
+      <div id="result"></div>
+      <button id="restart">Play Again</button>
+    </section>
+
+    <div class="overlay"></div>
+  </body>
+</html>
